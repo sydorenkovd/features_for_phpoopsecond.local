@@ -42,6 +42,6 @@ $values = array(1,2,3);
 $it = new MyIterator($values);
 
 foreach ($it as $a => $b) {
-    print "$a: $b\n";
+    print "$a: $b"."<br>";
 }
 ?>
