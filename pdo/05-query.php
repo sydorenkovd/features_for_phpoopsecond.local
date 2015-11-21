@@ -9,6 +9,4 @@
     	print $row['name'] .' - '. $row['email'] . '<br>';
 	}
 
-}
-
 ?>
