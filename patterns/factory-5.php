@@ -1,52 +1,126 @@
 <?php
 //method
-interface Product{
-	public function getName();
-}
-class ProductA implements Product{
-	private $name='ProductA';
-
-	public function getName(){
-		return $this->name;
-	}
-} 
-class ProductB implements Product{
-	private $name='ProductB';
-
-	public function getName(){
-		return $this->name;
-	}
+/**
+ * Interface Product
+ */
+interface Product
+{
+    /**
+     * @return mixed
+     */
+    public function getName();
 }
 
-interface Creater{
-	public function factoryMethod ();
-} 
+class Test
+{
+    private $name = 'Name';
 
-class CreaterA implements Creater{
-	public function factoryMethod(){
-		return new ProductA();
-	}
+    /**
+     * @param $name
+     * @param $value
+     */
+    public function setName($name, $value)
+    {
+        return $this->$name = $value;
+    }
+
+    public function test($test)
+    {
+        print $test;
+    }
 }
-class CreaterB implements Creater{
-	public function factoryMethod(){
-		return new ProductB();
-	}
+
+/**
+ * Class ProductA
+ */
+class ProductA implements Product
+{
+    /**
+     * @var string
+     */
+    private $name = 'ProductA';
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 }
 
-$creater1= new CreaterA();
-$creater2= new CreaterB();
-$count=intval($_GET['count']);
+/**
+ * Class ProductB
+ */
+class ProductB implements Product
+{
+    /**
+     * @var string
+     */
+    private $name = 'ProductB';
 
-if ($count==1) {
-	$type=$creater1->factoryMethod();
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+}
+
+/**
+ * Interface Creater
+ */
+interface Creater
+{
+    /**
+     * @return mixed
+     */
+    public function factoryMethod();
+}
+
+/**
+ * Class CreaterA
+ */
+class CreaterA implements Creater
+{
+    /**
+     * @return ProductA
+     */
+    public function factoryMethod()
+    {
+        return new ProductA();
+    }
+}
+
+/**
+ * Class CreaterB
+ */
+class CreaterB implements Creater
+{
+    /**
+     * @return ProductB
+     */
+    public function factoryMethod()
+    {
+        return new ProductB();
+    }
+}
+
+$creater1 = new CreaterA();
+$creater2 = new CreaterB();
+$count = intval($_GET['count']);
+
+if ($count == 1) {
+    $type = $creater1->factoryMethod();
 } else {
-	if ($count<=0) {
-		die("false");
-	} else {
-		$type=array();    
-		for($i=1;$i<=$count;$i++) {
-			$type[]=$creater2->factoryMethod();
-		}
-	}
+    if ($count <= 0) {
+        die("false");
+    } else {
+        $type = array();
+        for ($i = 1; $i <= $count; $i++) {
+            $type[] = $creater2->factoryMethod();
+        }
+    }
 }
 ?>

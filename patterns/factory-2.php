@@ -21,28 +21,28 @@ class CarsFactory {
 
 class Toyota extends Car {
 	public function getMaxSpeed() {
-		return
+		return 250;
 	}
 	public function getWeight() {
-		//
+		return 1500;
 	}
 }
 
 class BMW extends Car {
 	public function getMaxSpeed() {
-		//
+return 260;
 	}
 	public function getWeight() {
-		//
+		return 2500;
 	}
 }
 
 class Lada extends Car {
 	public function getMaxSpeed() {
-		//
+		return 100;
 	}
 	public function getWeight() {
-		//
+		return 3000;
 	}
 }
 
@@ -51,7 +51,7 @@ $cars['toyota'] = $carsFactory->createCar('toyota');
 $cars['bmw'] = $carsFactory->createCar('bmw');
 
 foreach ($cars as $mod => $obj) {
-	echo 'Max speed: '.$obj->getMaxSpeed().'';
-	echo 'Weight: '.$obj->getWeight();
+	echo 'Max speed: ' . $mod . " = " . $obj->getMaxSpeed();
+	echo ' Weight: ' . $mod . " = " . $obj->getWeight().'<br>';
 }
 ?>

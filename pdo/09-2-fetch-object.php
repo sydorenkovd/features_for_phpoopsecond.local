@@ -18,7 +18,7 @@ class Users{
     $stmt = $db->query($sql);
 
     $obj = $stmt->fetchObject('Users');
-	
+	var_dump($obj);
     echo $obj->id.'<br>';
 	echo $obj->nameToUpper().'<br>';
 	echo $obj->email.'<br>';

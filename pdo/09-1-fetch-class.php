@@ -1,5 +1,5 @@
 <?php
-class Users{
+class Vasya{
 
 	public $id;
 	public $email;
@@ -13,11 +13,11 @@ class Users{
 
     $db = new PDO("sqlite:users.db");
 
-	$sql = "SELECT * FROM user";
+	$sql = "SELECT name, email FROM user";
 
     $stmt = $db->query($sql);
 
-    $obj = $stmt->fetch(PDO:FETCH_CLASS|PDO:FETCH_CLASS_TYPE);
+    $obj = $stmt->fetch(PDO::FETCH_CLASS|PDO::FETCH_CLASSTYPE);
 	
     echo $obj->id.'<br>';
 	echo $obj->nameToUpper().'<br>';

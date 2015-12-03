@@ -62,6 +62,7 @@ class CSVFileObject extends SPLFileInfo implements Iterator, SeekableIterator {
 		}
 	}
 }
-$it = new CSVFileObject('data.csv');
-var_dump(iterator_to_array($it));
-?>
+$it = new CSVFileObject('data.csv');?>
+<pre>
+<? var_dump(iterator_to_array($it));?>
+</pre>
