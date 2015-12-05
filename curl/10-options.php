@@ -1,3 +1,4 @@
+<pre>
 <?php 
 
 $curl = curl_init(); 

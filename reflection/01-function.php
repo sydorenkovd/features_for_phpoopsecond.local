@@ -7,7 +7,6 @@ function sayHello($name, $h){
 
 // Обзор функции
 Reflection::export(new ReflectionFunction('sayHello'));
-exit;
 
 
 // Создание экземпляра класса ReflectionFunction
@@ -27,7 +26,6 @@ printf(
 if ($statics = $func->getStaticVariables()){
     printf("<p>---> Статическая переменная: %s\n", var_export($statics,1));
 }
-exit;
 
 
 // Вызов функции

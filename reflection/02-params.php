@@ -1,6 +1,6 @@
 <pre>
 <?php
-	function foo1($a, $b, $c) { }
+	function foo1($a, &$b, $c) { }
 	function foo2(Exception $a, &$b, $c) { }
 	function foo3(ReflectionFunction $a, $b = 1, $c = null) { }
 	function foo4() { }
@@ -9,7 +9,7 @@
 $reflect = new ReflectionFunction("foo1");
 
 echo $reflect;
-exit;
+// exit;
 
 
 foreach ($reflect->getParameters() as $i => $param) {

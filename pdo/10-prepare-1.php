@@ -11,13 +11,15 @@ try {
 
 	$stmt->execute();
 
-	//$result = $stmt->fetchAll();
-
-	while($row = $stmt->fetch()){
-		echo $row['id'].'<br>';
-		echo $row['name'].'<br>';
-		echo $row['email'];
-	}
+	$result = $stmt->fetchAll();
+foreach ($result as $val) {
+	echo $val['name'];
+}
+	// while($row = $stmt->fetch()){
+	// 	echo $row['id'].'<br>';
+	// 	echo $row['name'].'<br>';
+	// 	echo $row['email'];
+	// }
 
 	$db = null;
 }catch(PDOException $e){

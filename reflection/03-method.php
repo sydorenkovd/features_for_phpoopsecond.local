@@ -1,4 +1,4 @@
-<pre>
+ï»¿<pre>
 <?php
 class Counter{
     private static $c = 0;
@@ -8,27 +8,27 @@ class Counter{
     }
 }
 
-// Ñîçäàíèå ýêçåìïëÿðà êëàññà ReflectionMethod
+// Ð¡Ð¾Ð·Ð´Ð°Ð½Ð¸Ðµ ÑÐºÐ·ÐµÐ¼Ð¿Ð»ÑÑ€Ð° ÐºÐ»Ð°ÑÑÐ° ReflectionMethod
 $method = new ReflectionMethod('Counter', 'increment');
-exit;
+// exit;
 
 
 
-// Âûâîä îñíîâíîé èíôîðìàöèè
+// Ð’Ñ‹Ð²Ð¾Ð´ Ð¾ÑÐ½Ð¾Ð²Ð½Ð¾Ð¹ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸
 printf(
-    "===> %s%s%s%s%s%s%s ìåòîä '%s' (êîòîðûé ÿâëÿåòñÿ %s)\n" .
-    "     îáúÿâëåí â %s\n" .
-    "     ñòðîêè ñ %d ïî %d\n" .
-    "     èìååò ìîäèôèêàòîðû %d[%s]\n",
-        $method->isInternal() ? 'Âñòðîåííûé' : 'Ïîëüçîâàòåëüñêèé',
-        $method->isAbstract() ? ' àáñòðàêòíûé' : '',
-        $method->isFinal() ? ' ôèíàëüíûé' : '',
+    "===> %s%s%s%s%s%s%s Ð¼ÐµÑ‚Ð¾Ð´ '%s' (ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ ÑÐ²Ð»ÑÐµÑ‚ÑÑ %s)\n" .
+    "     Ð¾Ð±ÑŠÑÐ²Ð»ÐµÐ½ Ð² %s\n" .
+    "     ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ñ %d Ð¿Ð¾ %d\n" .
+    "     Ð¸Ð¼ÐµÐµÑ‚ Ð¼Ð¾Ð´Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€Ñ‹ %d[%s]\n",
+        $method->isInternal() ? 'Ð’ÑÑ‚Ñ€Ð¾ÐµÐ½Ð½Ñ‹Ð¹' : 'ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒÑÐºÐ¸Ð¹',
+        $method->isAbstract() ? ' Ð°Ð±ÑÑ‚Ñ€Ð°ÐºÑ‚Ð½Ñ‹Ð¹' : '',
+        $method->isFinal() ? ' Ñ„Ð¸Ð½Ð°Ð»ÑŒÐ½Ñ‹Ð¹' : '',
         $method->isPublic() ? ' public' : '',
         $method->isPrivate() ? ' private' : '',
         $method->isProtected() ? ' protected' : '',
-        $method->isStatic() ? ' ñòàòè÷åñêèé' : '',
+        $method->isStatic() ? ' ÑÑ‚Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹' : '',
         $method->getName(),
-        $method->isConstructor() ? 'êîíñòðóêòîðîì' : 'îáû÷íûì ìåòîäîì',
+        $method->isConstructor() ? 'ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð¾Ð¼' : 'Ð¾Ð±Ñ‹Ñ‡Ð½Ñ‹Ð¼ Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð¼',
         $method->getFileName(),
         $method->getStartLine(),
         $method->getEndline(),
@@ -36,16 +36,15 @@ printf(
         implode(' ', Reflection::getModifierNames($method->getModifiers()))
 );
 
-// Âûâîä ñòàòè÷åñêèõ ïåðåìåííûõ, åñëè îíè åñòü
+// Ð’Ñ‹Ð²Ð¾Ð´ ÑÑ‚Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸Ñ… Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ð½Ñ‹Ñ…, ÐµÑÐ»Ð¸ Ð¾Ð½Ð¸ ÐµÑÑ‚ÑŒ
 if ($statics= $method->getStaticVariables()) {
-    printf("---> Ñòàòè÷åñêàÿ ïåðåìåííàÿ: %s\n", var_export($statics, 1));
+    printf("---> Ð¡Ñ‚Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ°Ñ Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ð½Ð°Ñ: %s\n", var_export($statics, 1));
 }
-exit;
 
 
-// Âûçîâ ìåòîäà
-printf("---> Ðåçóëüòàò âûçîâà: ");
-$result = $method->invoke(null);
+// Ð’Ñ‹Ð·Ð¾Ð² Ð¼ÐµÑ‚Ð¾Ð´Ð°
+printf("---> Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ Ð²Ñ‹Ð·Ð¾Ð²Ð°: ");
+$result = $method->invoke(3);
 echo $result;
 ?>
 </pre>
