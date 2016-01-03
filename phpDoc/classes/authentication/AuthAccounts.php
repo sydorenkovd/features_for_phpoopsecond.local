@@ -20,6 +20,7 @@
 * @version 0.3
 * @since r12
 */
+// require_once('classes/User.php');
 class AuthAccounts extends Authentication{
 	/**
 	* Reference to <i>Users</i> object
@@ -38,7 +39,7 @@ class AuthAccounts extends Authentication{
 	* @return void
 	*/
 	public function __construct(){
-		$this->users = new Users();
+		$this->users = new User();
 	}
 	/**
 	* login method

@@ -13,10 +13,13 @@
 * @version 0.5
 * @since r6
 */
-require_once('classes/IAccount.php');
-require_once('classes/Authentication.php');
 require_once('classes/User.php');
+require_once('classes/IAccount.php');
+
+require_once('classes/Authentication.php');
 require_once('classes/Authentication/AuthAccounts.php');
+
+
 
 $auth = new AuthAccounts();
 // uncomment for testing
